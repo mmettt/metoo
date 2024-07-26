@@ -1,0 +1,207 @@
+body {
+    background-color: #F2F2F2;
+    font-family: Source Sans 3;
+}
+
+header {
+    background-color: #038928;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.header-buttons {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.header-buttons a {
+    background-color: transparent;
+    color: #fff;
+    border: 1px solid #fff;
+    height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 140px;
+    text-decoration: none;
+}
+
+/* Dropdown Button */
+.dropbtn {
+    color: #fff;
+    background-color: transparent;
+    border: 1px solid #fff;
+    padding: 5px 10px;
+}
+
+/* Dropdown Container */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 98px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 10px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+/* Show the dropdown menu on button click */
+.show {
+    display: block;
+}
+
+h1 {
+    color: rgb(127, 191, 53);
+    font-size: 30px;
+    font-weight: 400;
+}
+
+p {
+    font-size: 14px;
+    color: #333;
+    font-weight: 500;
+}
+
+label {
+    font-size: 14px;
+    font-weight: 400;
+    color: #333;
+}
+
+input {
+    width: 100%;
+    border: 1px solid #D5DADB;
+}
+
+.info-btn {
+    width: 35px !important;
+    height: 36px !important;
+
+    background-color: #2ea8ab;
+    border: 1px solid #2ea8ab;
+    color: #fff;
+}
+
+.login-btn {
+    width: 100%;
+
+    background-color: #2ea8ab;
+    border: 1px solid #2ea8ab;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    height: 42px;
+    margin-top: 10px;
+}
+
+form p {
+    font-size: 14px;
+    color: #000;
+}
+
+form a {
+    color: #3bc7cb;
+}
+
+.cart {
+    background-color: #fff;
+    border-bottom: 1px solid #D5DADB;
+    width: 100%;
+    padding: 20px;
+}
+
+h2 {
+    font-size: 20px;
+    font-weight: 500;
+    color: #999;
+    margin-top: 20px;
+    padding-left: 10px;
+}
+
+
+.accordion {
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+    border-radius: 4px;
+    overflow: hidden;
+    border: none;
+}
+
+.accordion-item {
+    border-bottom: 1px solid #ddd;
+}
+
+.accordion-header {
+    background-color: #E4E5E9;
+    color: #444;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: background-color 0.3s;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    padding-right: 0 !important;
+
+}
+
+.accordion-header i {
+    width: 30px;
+    height: 45px;
+    background-color: #2EA8AB;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+
+.accordion-header:hover {
+    background-color: #e2e2e2;
+}
+
+.accordion-content {
+    padding: 0 18px;
+    background-color: white;
+    display: none;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+
+.accordion-content p {
+    margin: 18px 0;
+}
+
+.other-btn {
+    font-size: 14px;
+    color: #3bc7cb;
+    text-decoration: none;
+    border-top: 1px solid #E7E8EB;
+    background: #fff;
+    padding: 10px 20px;
+    width: 100%;
+    display: flex;
+}
